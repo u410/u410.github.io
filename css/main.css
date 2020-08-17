@@ -4,8 +4,10 @@
 
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css);
 
-@font-face {
+/* @font-face {
   font-family: Montserrat-Regular;
   src: url('../fonts/montserrat/Montserrat-Regular.ttf'); 
 }
@@ -23,7 +25,7 @@
 @font-face {
   font-family: Montserrat-Medium;
   src: url('../fonts/montserrat/Montserrat-Medium.ttf'); 
-}
+} */
 
 
 
@@ -38,12 +40,12 @@
 
 body, html {
 	height: 100%;
-	font-family: Montserrat-Regular, sans-serif;
+	font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', sans-serif;
 }
 
 /*---------------------------------------------*/
 a {
-	font-family: Montserrat-Regular;
+	font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', sans-serif;
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -69,7 +71,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-	font-family: Montserrat-Regular;
+	font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', sans-serif;
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -157,12 +159,12 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: rgba(132,106,221,0.9);
+  /* background: rgba(132,106,221,0.9); */
 }
 
 .wrap-contact100 {
   width: 1163px;
-  background: #fff;
+  /* background: rgba(255, 255, 255, 0.217); */
   border-radius: 10px;
   overflow: hidden;
 
@@ -196,9 +198,10 @@ iframe {
 
 .contact100-form-title {
   display: block;
-  font-family: Montserrat-ExtraBold;
+  font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', sans-serif;
   font-size: 24px;
-  color: #333333;
+  font-weight: bolder;
+  color: #171717;
   line-height: 1.2;
   text-align: left;
   padding-bottom: 36px;
@@ -207,11 +210,11 @@ iframe {
 input.input100 {
   height: 50px;
   border-radius: 25px;
-  padding: 0 30px 0 50px;
+  padding: 0 30px 0 60px;
 }
 
 input.input100[name="email"] {
-  padding: 0 30px 0 54px;
+  padding: 0 30px 0 64px;
 }
 
 textarea.input100 {
@@ -232,12 +235,117 @@ textarea.input100 {
   display: block;
   width: 100%;
   background: #e6e6e6;
-  font-family: Montserrat-Bold;
+  font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', sans-serifBold;
   font-size: 15px;
   line-height: 1.5;
   color: #666666;
 }
 
+/* checkbox */
+*{ box-sizing: border-box; user-select: none; }
+
+input[type='checkbox']{ height: 0; width: 0; }
+
+input[type='checkbox'] + label{
+  position: relative;
+  display: flex;
+  margin: .6em 0;
+  align-items: center;
+  color: #000;
+  transition: color 250ms cubic-bezier(.4,.0,.23,1);
+}
+input[type='checkbox'] + label > ins{
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  left: 2em;
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+  text-decoration: none;
+  transition: height 300ms cubic-bezier(.4,.0,.23,1);
+}
+input[type='checkbox'] + label > ins > i{
+  position: absolute;
+  bottom: 0;
+  font-style: normal;
+  font-weight: bold;
+/*   color: #4FC3F7; */
+}
+input[type='checkbox'] + label > span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1em;
+  min-width: 18px;
+  width: 1em;
+  height: 1em;
+  background: transparent;
+  border: 2px solid #000;
+  border-radius: 2px;
+  cursor: pointer;  
+  transition: all 250ms cubic-bezier(.4,.0,.23,1);
+}
+
+input[type='checkbox'] + label:hover, input[type='checkbox']:focus + label{
+  color: #000;
+}
+input[type='checkbox'] + label:hover > span, input[type='checkbox']:focus + label > span{
+  background: rgba(255,255,255,.1);
+}
+input[type='checkbox']:checked + label.check-box-text{ 
+  font-weight: bolder;
+}
+input[type='checkbox']:checked + label > ins{ 
+  /* height: 100%; */
+}
+
+input[type='checkbox']:checked + label > span{
+  border: .5em solid #000000;
+  animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1);
+}
+input[type='checkbox']:checked + label > span:before{
+  content: "";
+  position: absolute;
+  top: .6em;
+  left: .2em;
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  transform: rotate(45deg);
+  transform-origin: 0% 100%;
+  animation: checkbox-check 125ms 250ms cubic-bezier(.4,.0,.23,1) forwards;
+}
+
+@keyframes shrink-bounce{
+  0%{
+    transform: scale(1);
+  }
+  33%{    
+    transform: scale(.85);
+  }
+  100%{
+    transform: scale(1);    
+  }
+}
+@keyframes checkbox-check{
+  0%{
+    width: 0;
+    height: 0;
+    border-color: #e2e2e2;
+    transform: translate3d(0,0,0) rotate(45deg);
+  }
+  33%{
+    width: .4em;
+    height: 0;
+    transform: translate3d(0,0,0) rotate(45deg);
+  }
+  100%{    
+    width: .4em;
+    height: .6em;    
+    border-color: #e2e2e2;
+    transform: translate3d(0,-.5em,0) rotate(45deg);
+  }
+}
 
 /*------------------------------------------------------------------
 [ Focus ]*/
@@ -251,7 +359,7 @@ textarea.input100 {
   width: 100%;
   height: 100%;
   box-shadow: 0px 0px 0px 0px;
-  color: rgba(132,106,221, 0.5);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .input100:focus + .focus-input100 {
@@ -298,7 +406,7 @@ textarea.input100 {
 }
 
 .input100:focus + .focus-input100 + .symbol-input100 {
-  color: #846add;
+  color: #000;
   padding-left: 22px;
 }
 
@@ -320,8 +428,8 @@ textarea.input100 {
   width: 100%;
   height: 50px;
   border-radius: 25px;
-  background: #846add;
-  font-family: Montserrat-Bold;
+  background: #000;
+  font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', sans-serif;
   font-size: 15px;
   line-height: 1.5;
   color: #fff;
@@ -416,7 +524,7 @@ textarea.input100 {
   right: 8px;
   pointer-events: none;
 
-  font-family: Montserrat-Medium;
+  font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', sans-serif;
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;

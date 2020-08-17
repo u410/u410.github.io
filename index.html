@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Contact V12</title>
+	<title>U410 도시이야기 57호 원고 제출</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="images/icons/ms-icon-150x150.png"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -23,42 +23,57 @@
 </head>
 <body>
 
-	<div class="bg-contact100" style="background-image: url('images/bg-01.jpg');">
+	<div class="bg-contact100" style="background-image: url('images/56_bg.png');">
 		<div class="container-contact100">
 			<div class="wrap-contact100">
 				<div class="contact100-pic js-tilt" data-tilt>
-					<img src="images/img-01.png" alt="IMG">
+					<img src="images/221_U410_logo_basic.svg" alt="IMG">
 				</div>
 
-				<form class="contact100-form validate-form">
+				<form class="contact100-form validate-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfvDX9X32SUriV7-JVr5fLHEA1SXOXP-TYDkgzBvyYdAY8srw/formResponse" target="_self" method="POST" id="mG61Hd">
 					<span class="contact100-form-title">
-						Get in touch
+						도시이야기 56호 원고 제출
 					</span>
-
-					<div class="wrap-input100 validate-input" data-validate = "Name is required">
-						<input class="input100" type="text" name="name" placeholder="Name">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-user" aria-hidden="true"></i>
-						</span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+					
+					<div class="wrap-input100 validate-input" data-validate = "이메일 주소를 u410@yonsei.ac.kr와 같이 정확히 입력해주세요.">
+						<input class="input100" type="email" name="emailAddress" placeholder="이메일 주소">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Message is required">
-						<textarea class="input100" name="message" placeholder="Message"></textarea>
+					<div class="wrap-input100 validate-input" data-validate = "성명을 입력해주세요.">
+						<input class="input100" type="text" name="entry.173697559" placeholder="성명">
 						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "동명이인 구분을 위해, 학번을 입력해주세요.">
+						<input class="input100" type="number" name="entry.2054233807" placeholder="입학연도 마지막 2자리 (학번)">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-id-card" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="wrap-input100 validate-input" data-validate = "후기를 입력해주세요.">
+						<textarea class="input100" name="entry.1824972449" placeholder="57호 기고 후기"></textarea>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100">
+						<input type="checkbox" name="entry.1472348045" value="동의" data-answer-value="동의" id="agree-term" class="agree-term" onchange="showAgreeTerm()" oninvalid="alert('개인정보 수집 및 이용에 동의 해주세요.')" required>
+						<label for="agree-term" class="check-box check-box-text">
+							<span></span>  개인정보 수집 및 이용에 동의합니다.
+							<ins><i>개인정보 수집 및 이용에 동의합니다.</i></ins></label>
 					</div>
 
 					<div class="container-contact100-form-btn">
 						<button class="contact100-form-btn">
-							Send
+							제출하기
 						</button>
 					</div>
 				</form>
