@@ -235,7 +235,24 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 110px 130px 157px 148px;
+  padding: 70px 130px 70px 148px;
+}
+
+.container-file {
+  width: 100%;
+  /* padding: 15px; */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap-file {
+  /* width: 1163px; */
+  border-radius: 25px;
+  overflow: hidden;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 /*------------------------------------------------------------------
@@ -253,7 +270,7 @@ iframe {
 /*------------------------------------------------------------------
 [  ]*/
 .contact100-form {
-  width: 390px;
+  max-width: 1200px;
 }
 
 .contact100-form-div {
@@ -403,7 +420,7 @@ input[type='checkbox']:checked~label>span:before {
   animation: checkbox-check 125ms 250ms cubic-bezier(.4, .0, .23, 1) forwards;
 }
 
-input#agree-term:checked ~ .limiter {
+input#agree-term:checked~.limiter {
   /* height: 0; */
   /* visibility: hidden; */
   /* background: black; */
@@ -514,8 +531,16 @@ input#agree-term:checked ~ .limiter {
 }
 
 /*------------------------------------------------------------------
+[ FilePond ]*/
+.filepond--root {
+  font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', sans-serif !important;
+  margin-bottom: 0 !important;
+}
+
+/*------------------------------------------------------------------
 [ Personal Information ]*/
 .agreeTerm {
+  margin-top: 7px;
   margin-bottom: 7px;
   font-size: 15px;
   color: #000;
@@ -534,7 +559,7 @@ input#agree-term:checked ~ .limiter {
 .limiter {
   width: 100%;
   margin: 0 auto;
-  padding: 5%;
+  padding: 2% 5% 2% 5%;
   background-color: #e6e6e65c;
   border-radius: 25px;
 }
@@ -652,7 +677,7 @@ input#agree-term:checked ~ .limiter {
 
 @media (max-width: 992px) {
   .wrap-contact100 {
-    padding: 110px 80px 157px 90px;
+    padding: 70px 80px 70px 90px;
   }
 
   .contact100-pic {
@@ -666,7 +691,7 @@ input#agree-term:checked ~ .limiter {
 
 @media (max-width: 768px) {
   .wrap-contact100 {
-    padding: 110px 80px 157px 80px;
+    padding: 70px 80px 70px 80px;
   }
 
   .contact100-pic {
@@ -680,7 +705,7 @@ input#agree-term:checked ~ .limiter {
 
 @media (max-width: 576px) {
   .wrap-contact100 {
-    padding: 110px 15px 157px 15px;
+    padding: 70px 15px 70px 15px;
   }
 }
 
