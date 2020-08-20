@@ -9,6 +9,8 @@ function saveFile() {
 
   var encodedUri = "data:text/csv;charset=utf-8,%EF%BB%BF" + encodeURI(csv); // accept data as CSV
   //%EF%BB%BF means it accepts Hangul too
+
+  console.log(formData);
   var fileName = formData[0]['value'].replace('/ /g','')+" 응답.csv"
 //   var fileName = "response.csv";
 

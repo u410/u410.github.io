@@ -24,6 +24,10 @@
 
 	<!-- Filepond stylesheet -->
 	<link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+	<link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+	<link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+		rel="stylesheet">
+
 </head>
 
 <body>
@@ -78,7 +82,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="이메일 주소를 u410@yonsei.ac.kr와 같이 정확히 입력해주세요.">
-						<input class="input100" type="email" id="emailAddress" name="emailAddress"
+						<input class="input100 checkInput" type="email" id="emailAddress" name="emailAddress"
 							placeholder="이메일 주소" />
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
@@ -87,7 +91,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="성명을 입력해주세요.">
-						<input class="input100" type="text" name="entry.173697559" placeholder="성명" />
+						<input class="input100 checkInput" type="text" name="entry.173697559" placeholder="성명" />
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user" aria-hidden="true"></i>
@@ -95,33 +99,45 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="동명이인 구분을 위해, 학번을 입력해주세요.">
-						<input class="input100" type="number" name="entry.2054233807" placeholder="입학연도 마지막 2자리 (학번)"
-							pattern="[0-9][0-9]" />
+						<input class="input100 checkInput" type="number" name="entry.2054233807"
+							placeholder="입학연도 마지막 2자리 (학번)" pattern="[0-9][0-9]" />
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-id-card" aria-hidden="true"></i>
 						</span>
 					</div>
 
-					<div class="container-file">
-						<div class="wrap-file">
-							<!-- We'll transform this input into a pond -->
-							<input type="file" name="filepond" class="filepond" server='server' data-max-file-size="3GB"
-								required multiple>
+					<div class="container-file default-hidden">
+						<div class="limiter">
+							<p class="file">
+								<i class="fa fa-cloud-upload" aria-hidden="true"></i>
+								&nbsp;
+								원고 파일 및 프로필 사진</p>
+							<!-- TODO: 파일 확장자 확인 -->
+							<p class="file-content">한 번에 여러 파일을 업로드하실 수 있습니다.</p>
+							<!-- <p class="file-content">한 번에 여러 파일을 업로드하실 수 있습니다. 작성하신 원고(.hwp, .docx)와 프로필 사진(.jpg, .png,
+								.heic)을 전송해주세요.</p> -->
+							<div class="wrap-file">
+								<!-- We'll transform this input into a pond -->
+								<input type="file" name="filepond" class="filepond" server='server'
+									data-max-file-size="3GB" multiple required>
+							</div>
 						</div>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="후기를 입력해주세요.">
+					<div class="wrap-input100 validate-input default-hidden" data-validate="후기를 입력해주세요.">
 						<textarea class="input100" name="entry.1824972449" placeholder="57호 기고 후기"></textarea>
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100">
+					<div class="wrap-input100 default-hidden">
 						<input type="checkbox" name="entry.1472348045" value="동의" data-answer-value="동의" id="agree-term"
-							class="agree-term" onchange="showAgreeTerm()" oninvalid="alert('개인정보 수집 및 이용에 동의 해주세요.')"
-							required />
+							class="agree-term" oninvalid="alert('개인정보 수집 및 이용에 동의 해주세요.')" required />
 						<div class="limiter">
-							<p class="agreeTerm">개인정보 수집·이용 등에 관한 안내</p>
+							<p class="agreeTerm">
+								<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+								&nbsp;
+								개인정보 수집·이용 등에 관한 안내</p>
 							<p class="agreeTerm-content">U410 학회지 '도시이야기'에 등재될 글 모집을 위하여 아래와 같이 개인정보를 수집·이용 및 제공하고자 합니다.
 								내용을 자세히 읽으신 후 동의 여부를 결정하여 주십시오.</p>
 							<div class="wrap-table100">
@@ -158,149 +174,184 @@
 					<input type="hidden" name="pageHistory" value="0" />
 					<input type="hidden" name="fbzx" value="9013002698688872533" />
 
-					<div class="container-contact100-form-btn">
+					<div class="container-contact100-form-btn default-hidden">
 						<button type="submit" value="제출" class="contact100-form-btn" onclick="saveFile()">
 							제출하기
 						</button>
 					</div>
 				</form>
+				</form>
 			</div>
 		</div>
+		<!-- TODO: 채팅 or 디스코드 사입 -->
 		<footer>
 			<p>This templates was made by
 				<a href="https://colorlib.com">Colorlib</a>.</p>
 		</footer>
-	</div>
 
-	<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/tilt/tilt.jquery.min.js"></script>
-	<script>
-		$(".js-tilt").tilt({
-			scale: 1.1,
-		});
-	</script>
-	<!--===============================================================================================-->
-	<script src="js/main.js"></script>
-	<script src="js/saveFile.js"></script>
+		<!--===============================================================================================-->
+		<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+		<!--===============================================================================================-->
+		<script src="vendor/bootstrap/js/popper.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<!--===============================================================================================-->
+		<script src="vendor/select2/select2.min.js"></script>
+		<!--===============================================================================================-->
+		<script src="vendor/tilt/tilt.jquery.min.js"></script>
+		<script>
+			$(".js-tilt").tilt({
+				scale: 1.1,
+			});
+		</script>
+		<!--===============================================================================================-->
+		<script src="js/main.js"></script>
+		<script src="js/saveFile.js"></script>
+		<!-- <script src="js/order.js"></script> -->
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
 
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag("js", new Date());
-
-		gtag("config", "UA-23581568-13");
-	</script>
-
-	<!-- FilePond -->
-	<!-- Load FilePond library -->
-	<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
-
-	<!-- Turn all file input elements into ponds -->
-	<script>
-		// get a reference to the input element
-		const inputElement = document.querySelector('input[type="file"]');
-
-		var baseUrl = 'https://urbanstory.blob.core.windows.net/manuscript/'
-		var token = '?sv=2019-12-12&ss=b&srt=o&sp=rwdac&se=2020-08-19T19:40:32Z&st=2020-08-19T11:40:32Z&spr=https&sig=%2FqaUbf9g82QEJUJo7ZI9KSzmPa7NgPzqOzPuB6ejoKQ%3D';
-		var processUri = '';
-
-		var userId = document.getElementById('emailAddress').value;
-		var indexOfIdEnd = userId.indexOf("@");
-		userId = userId.substring(0, indexOfIdEnd);
-
-		// create a FilePond instance at the input element location
-		const pond = FilePond.create(inputElement, {
-			name: 'filepond',
-			onaddfile: (err, file) => {
-				if (err) {
-					console.log('ERROR: File add');
-					return;
-				}
-				console.log(file.filename);
-				// processUri = baseUrl.substring(0, indexOfQueryStart) + "manuscript/" + file.filename;
-				processUri = baseUrl + file.filename + token;
-				// processUri = baseUrl.substring(0, indexOfQueryStart) + "manuscript/" + userId + "/" + file.filename + baseUrl.substring(indexOfQueryStart);
-
-				FilePond.setOptions({
-					server: {
-						// url: processUri,
-						process: (fieldName, file, metadata, load, error, progress, abort, transfer,
-							options) => {
-
-							// fieldName is the name of the input field
-							// file is the actual file object to send
-							const formData = new FormData();
-							formData.append(fieldName, file, file.name);
-
-							const request = new XMLHttpRequest();
-							request.open('PUT', processUri);
-							request.setRequestHeader('x-ms-blob-type', 'BlockBlob');
-
-							// Should call the progress method to update the progress to 100% before calling load
-							// Setting computable to false switches the loading indicator to infinite mode
-							request.upload.onprogress = (e) => {
-								progress(e.lengthComputable, e.loaded, e.total);
-							};
-
-							// Should call the load method when done and pass the returned server file id
-							// this server file id is then used later on when reverting or restoring a file
-							// so your server knows which file to return without exposing that info to the client
-							request.onload = function () {
-								if (request.status >= 200 && request.status < 300) {
-									// the load method accepts either a string (id) or an object
-									load(request.responseText);
-								} else {
-									// Can call the error method if something is wrong, should exit after
-									error('oh no');
-								}
-							};
-
-							request.send(formData);
-
-							// Should expose an abort method so the request can be cancelled
-							return {
-								abort: () => {
-									// This function is entered if the user has tapped the cancel button
-									request.abort();
-
-									// Let FilePond know the request has been cancelled
-									abort();
-								}
-							};
-						},
-
-						// process: {
-						// 	method: 'PUT',
-						// 	headers: {
-						// 		// 	// 'Authorization': 'Shared access signature: BK25ZQbOCh2Y4%2FM%2FzTn2ERXBwkKPMCtvrCiAHD%2F6aZM%3D',
-						// 		// 	'x-ms-date': (new Date()).toUTCString(),
-						// 		// 	'x-ms-version': '2019-12-12',
-						// 		// 	// 'Content-Length': 0,
-						// 		'x-ms-blob-type': 'BlockBlob',
-						// 		'Content-Type': 'text/plain'
-						// 	},
-						// 	// withCredentials: false,
-						// 	// onerror: (response) => console.log(response.data)
-						// },
-						// fetch: null,
-						// revert: null
-					}
-				});
+			function gtag() {
+				dataLayer.push(arguments);
 			}
-		});
-	</script>
+			gtag("js", new Date());
+
+			gtag("config", "UA-23581568-13");
+		</script>
+
+		<!-- FilePond -->
+		<!-- Load FilePond library -->
+		<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+		<script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js">
+		</script>
+		<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+		<script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+		<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+
+		<!-- Turn all file input elements into ponds -->
+		<script>
+			// Register the plugin
+			FilePond.registerPlugin(FilePondPluginFileValidateType);
+			FilePond.registerPlugin(FilePondPluginImagePreview);
+
+			// get a reference to the input element
+			const inputElement = document.querySelector('input[type="file"]');
+
+			var baseUrl = 'https://urbanstory.blob.core.windows.net/manuscript/'
+			//TODO: token 최신화 및 CORS 보안 강화
+			var token =
+				'?sv=2019-12-12&ss=b&srt=o&sp=rwdlac&se=2020-08-20T09:40:12Z&st=2020-08-20T01:40:12Z&spr=https&sig=x%2F7msZCCmGywWYs4YGGnEzBczFDP%2FYBgWXbQ%2BdB%2BstI%3D';
+			var processUri = '';
+
+			// create a FilePond instance at the input element location
+			const pond = FilePond.create(inputElement, {
+				name: 'filepond',
+				acceptedFileTypes: ['image/*', 'application/haansofthwp', 'application/msword',
+					'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/rtf'
+				],
+				fileValidateTypeLabelExpectedTypesMap: {
+					'image/*': '.png, .jpg',
+					'application/haansofthwp': '.hwp',
+					'application/msword': '.doc',
+					'application/vnd.openxmlformats-officedocument.wordprocessingml.document': 'docx',
+					'application/rtf': '.rtf'
+				},
+				fileValidateTypeDetectType: (source, type) => new Promise((resolve, reject) => {
+					// Do custom type detection here and return with promise
+					resolve(type);
+				}),
+				allowImagePreview: true,
+
+				onaddfile: (err, file) => {
+					if (err) {
+						console.log('ERROR: File add');
+						return;
+					}
+
+					var userId = document.getElementById('emailAddress').value;
+					// var indexOfIdEnd = userId.indexOf("@");
+					// userId = userId.substring(0, indexOfIdEnd);
+					console.log(userId);
+					
+					FilePond.setOptions({
+						server: {
+							process: (fieldName, file, metadata, load, error, progress, abort, transfer,
+							options) => {
+								
+								// Azure Blob Storage가 FormData 형식을 받지 않음.
+								// 따라서 파일 하나하나 전송.
+								// fieldName is the name of the input field
+								// file is the actual file object to send
+								// const formData = new FormData();
+								// formData.append(fieldName, file, file.name);
+
+								console.log("ADD: "+file.name);
+								// processUri = baseUrl.substring(0, indexOfQueryStart) + "manuscript/" + file.filename;
+								// processUri = baseUrl + file.filename + token;
+								processUri = baseUrl + userId + "/" + file.name + token;
+
+								const request = new XMLHttpRequest();
+								console.log(processUri);
+								request.open('PUT', processUri);
+								request.setRequestHeader('x-ms-blob-type', 'BlockBlob');
+
+								// Should call the progress method to update the progress to 100% before calling load
+								// Setting computable to false switches the loading indicator to infinite mode
+								request.upload.onprogress = (e) => {
+									progress(e.lengthComputable, e.loaded, e.total);
+								};
+
+								// Should call the load method when done and pass the returned server file id
+								// this server file id is then used later on when reverting or restoring a file
+								// so your server knows which file to return without exposing that info to the client
+								request.onload = function () {
+									if (request.status >= 200 && request.status < 300) {
+										// the load method accepts either a string (id) or an object
+										load(request.responseText);
+									} else {
+										// Can call the error method if something is wrong, should exit after
+										error('oh no');
+									}
+								};
+
+								// request.send(formData);
+								request.send(file);
+
+								// Should expose an abort method so the request can be cancelled
+								return {
+									abort: () => {
+										// This function is entered if the user has tapped the cancel button
+										request.abort();
+
+										// Let FilePond know the request has been cancelled
+										abort();
+									}
+								};
+							},
+
+							// url: processUri,
+							// process: {
+							// 	method: 'PUT',
+							// 	headers: {
+							// 		// 	// 'Authorization': 'Shared access signature: BK25ZQbOCh2Y4%2FM%2FzTn2ERXBwkKPMCtvrCiAHD%2F6aZM%3D',
+							// 		// 	'x-ms-date': (new Date()).toUTCString(),
+							// 		// 	'x-ms-version': '2019-12-12',
+							// 		// 	// 'Content-Length': 0,
+							// 		'x-ms-blob-type': 'BlockBlob',
+							// 		// 'Content-Type': 'text/plain'
+							// 	},
+							// 	// withCredentials: false,
+							// 	// onerror: (response) => console.log(response.data)
+							// },
+							// fetch: null,
+							// revert: null
+						}
+					});
+				}
+			});
+		</script>
 
 </body>
 
