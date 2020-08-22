@@ -28,6 +28,20 @@
 	<link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
 		rel="stylesheet">
 
+	<!-- Discord WidgetBot.io -->
+	<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+		new Crate({
+			server: '746305067488903219', // U410
+			channel: '746554592887701565' // #57호-원고
+		})
+
+		// Display notification
+		crate.notify({
+			content: '`문제가 있으신가요?`',
+			// 	timeout: 2000,
+			// 	avatar: 'images\img-01.png'
+		})
+	</script>
 </head>
 
 <body>
@@ -77,8 +91,58 @@
 					</div>
 					<div class="contact100-form-div">
 						<span class="contact100-form-title">
-							도시이야기 56호 원고 제출
+							도시이야기 57호 원고 제출
 						</span>
+					</div>
+
+					<div class="wrap-input100">
+						<div class="limiter">
+							<p class="agreeTerm">
+								<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+								&nbsp;
+								안내사항</p>
+							<p class="agreeTerm-content"></p>
+							<div class="wrap-table100">
+								<div class="table">
+									<div class="row">
+										<a href="https://blog.kakaocdn.net/dn/GHWR6/btqG4aaxdrD/9Pmle0CoNQbEzUbN1yemU0/%5B%EB%8F%84%EC%8B%9C%EC%9D%B4%EC%95%BC%EA%B8%B0%2057%ED%98%B8%20%EC%9B%90%EA%B3%A0%5D%20%EC%96%91%EC%8B%9D.docx?attach=1&knm=tfile.docx"
+											target="_blank" class="cell">
+											권고 양식(.docx)
+										</a>
+										<a href="https://blog.kakaocdn.net/dn/GHWR6/btqG4aaxdrD/9Pmle0CoNQbEzUbN1yemU0/%5B%EB%8F%84%EC%8B%9C%EC%9D%B4%EC%95%BC%EA%B8%B0%2057%ED%98%B8%20%EC%9B%90%EA%B3%A0%5D%20%EC%96%91%EC%8B%9D.docx?attach=1&knm=tfile.docx"
+											target="_blank" class="cell_button">
+											다운받기
+										</a>
+									</div>
+									<div class="row_blank">
+									</div>
+									<div class="row">
+										<a href="https://u410.tistory.com/" target="_blank" class="cell">
+											도시이야기 56호 이전 호
+										</a>
+										<a href="https://u410.tistory.com/" target="_blank" class="cell_button">
+											보러가기
+										</a>
+									</div>
+								</div>
+							</div>
+							<p class="agreeTerm-content">자유롭게 작성해주세요. 막막하시다면, 아래 추천 주제 중에서 선택하시거나 이전 호를 참조해주세요.</p>
+							<p class="notice-content">ㄱ. 대학생활 일상기</p>
+							<p class="notice-content">ㄴ. 진로·연애고민 등 수필</p>
+							<p class="notice-content">ㄷ. 학과행사·여행 등 후기</p>
+							<p class="notice-content">ㄹ. 독서·영화·음악 감상문</p>
+							<p class="notice-content">ㅁ. 단편소설, 시, 각본 등 창작물</p>
+							<p class="notice-content">ㅂ. 전공 과제</p>
+							<p class="notice-content">ㅅ. 코로나19</p>
+							<p class="agreeTerm-content">문의사항은 화면 오른쪽 아래에 있는 &nbsp;<svg class="discord-button"
+									xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+									enable-background="new 0 0 512 512" id="Layer_1" version="1.1" viewBox="0 0 512 512"
+									xml:space="preserve">
+									<circle cx="256" cy="256" fill="#8C9EFF" id="ellipse" r="256" />
+									<path
+										d="M372.4,168.7c0,0-33.3-26.1-72.7-29.1l-3.5,7.1c35.6,8.7,51.9,21.2,69,36.5  c-29.4-15-58.5-29.1-109.1-29.1s-79.7,14.1-109.1,29.1c17.1-15.3,36.5-29.2,69-36.5l-3.5-7.1c-41.3,3.9-72.7,29.1-72.7,29.1  s-37.2,54-43.6,160c37.5,43.3,94.5,43.6,94.5,43.6l11.9-15.9c-20.2-7-43.1-19.6-62.8-42.3c23.5,17.8,59.1,36.4,116.4,36.4  s92.8-18.5,116.4-36.4c-19.7,22.7-42.6,35.3-62.8,42.3l11.9,15.9c0,0,57-0.3,94.5-43.6C409.6,222.7,372.4,168.7,372.4,168.7z   M208.7,299.6c-14.1,0-25.5-13-25.5-29.1s11.4-29.1,25.5-29.1c14.1,0,25.5,13,25.5,29.1S222.8,299.6,208.7,299.6z M303.3,299.6  c-14.1,0-25.5-13-25.5-29.1s11.4-29.1,25.5-29.1s25.5,13,25.5,29.1S317.3,299.6,303.3,299.6z"
+										fill="#FFFFFF" id="logo" /></svg> 버튼을 눌러 메시지를 보내주세요.</p>
+						</div>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="이메일 주소를 u410@yonsei.ac.kr와 같이 정확히 입력해주세요.">
@@ -91,7 +155,8 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="성명을 입력해주세요.">
-						<input class="input100 checkInput" type="text" name="entry.173697559" placeholder="성명" />
+						<input class="input100 checkInput" type="text" id="name" name="entry.173697559"
+							placeholder="성명" />
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user" aria-hidden="true"></i>
@@ -99,7 +164,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="동명이인 구분을 위해, 학번을 입력해주세요.">
-						<input class="input100 checkInput" type="number" name="entry.2054233807"
+						<input class="input100 checkInput" type="number" id="year" name="entry.2054233807"
 							placeholder="입학연도 마지막 2자리 (학번)" pattern="[0-9][0-9]" />
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
@@ -113,7 +178,6 @@
 								<i class="fa fa-cloud-upload" aria-hidden="true"></i>
 								&nbsp;
 								원고 파일 및 프로필 사진</p>
-							<!-- TODO: 파일 확장자 확인 -->
 							<p class="file-content">한 번에 여러 파일을 업로드하실 수 있습니다.</p>
 							<!-- <p class="file-content">한 번에 여러 파일을 업로드하실 수 있습니다. 작성하신 원고(.hwp, .docx)와 프로필 사진(.jpg, .png,
 								.heic)을 전송해주세요.</p> -->
@@ -131,8 +195,6 @@
 					</div>
 
 					<div class="wrap-input100 default-hidden">
-						<input type="checkbox" name="entry.1472348045" value="동의" data-answer-value="동의" id="agree-term"
-							class="agree-term" oninvalid="alert('개인정보 수집 및 이용에 동의 해주세요.')" required />
 						<div class="limiter">
 							<p class="agreeTerm">
 								<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
@@ -163,10 +225,13 @@
 							</div>
 							<p class="agreeTerm-content">위의 개인정보 수집·이용 등에 관한 동의를
 								거부할 수 있습니다. 다만, 동의하지 아니할 경우, 원활한 서비스 제공에 제한을 받을 수 있습니다.</p>
+							<input type="checkbox" name="entry.1472348045" value="동의" data-answer-value="동의"
+								id="agree-term" class="agree-term" oninvalid="alert('개인정보 수집 및 이용에 동의 해주세요.')"
+								required />
+							<label for="agree-term" class="check-box check-box-text">
+								<span></span> 개인정보 수집 및 이용에 동의합니다.
+								<ins><i>개인정보 수집 및 이용에 동의합니다.</i></ins></label>
 						</div>
-						<label for="agree-term" class="check-box check-box-text">
-							<span></span> 개인정보 수집 및 이용에 동의합니다.
-							<ins><i>개인정보 수집 및 이용에 동의합니다.</i></ins></label>
 					</div>
 
 					<!-- for google form -->
@@ -183,7 +248,6 @@
 				</form>
 			</div>
 		</div>
-		<!-- TODO: 채팅 or 디스코드 사입 -->
 		<footer>
 			<p>This templates was made by
 				<a href="https://colorlib.com">Colorlib</a>.</p>
@@ -240,10 +304,9 @@
 			const inputElement = document.querySelector('input[type="file"]');
 
 			var baseUrl = 'https://urbanstory.blob.core.windows.net/manuscript/'
-			//TODO: token 최신화 및 CORS 보안 강화
 			var token =
-				'?sv=2019-12-12&ss=b&srt=o&sp=rwdlac&se=2020-08-20T09:40:12Z&st=2020-08-20T01:40:12Z&spr=https&sig=x%2F7msZCCmGywWYs4YGGnEzBczFDP%2FYBgWXbQ%2BdB%2BstI%3D';
-			var processUri = '';
+				'?sv=2019-12-12&ss=bf&srt=co&sp=wacx&se=2020-09-30T21:52:50Z&st=2020-08-18T13:52:50Z&spr=https&sig=BK25ZQbOCh2Y4%2FM%2FzTn2ERXBwkKPMCtvrCiAHD%2F6aZM%3D';
+			var processUri_1 = '';
 
 			// create a FilePond instance at the input element location
 			const pond = FilePond.create(inputElement, {
@@ -270,16 +333,18 @@
 						return;
 					}
 
-					var userId = document.getElementById('emailAddress').value;
-					// var indexOfIdEnd = userId.indexOf("@");
-					// userId = userId.substring(0, indexOfIdEnd);
-					console.log(userId);
-					
+					var userEmail = document.getElementById('emailAddress').value;
+					var userName = document.getElementById('name').value;
+					var userYear = document.getElementById('year').value;
+					// var indexOfIdEnd = userEmail.indexOf("@");
+					// userEmail = userEmail.substring(0, indexOfIdEnd);
+					console.log(userEmail);
+
 					FilePond.setOptions({
 						server: {
 							process: (fieldName, file, metadata, load, error, progress, abort, transfer,
-							options) => {
-								
+								options) => {
+
 								// Azure Blob Storage가 FormData 형식을 받지 않음.
 								// 따라서 파일 하나하나 전송.
 								// fieldName is the name of the input field
@@ -287,14 +352,16 @@
 								// const formData = new FormData();
 								// formData.append(fieldName, file, file.name);
 
-								console.log("ADD: "+file.name);
-								// processUri = baseUrl.substring(0, indexOfQueryStart) + "manuscript/" + file.filename;
-								// processUri = baseUrl + file.filename + token;
-								processUri = baseUrl + userId + "/" + file.name + token;
+								console.log("ADD: " + file.name);
+								// processUri_1 = baseUrl.substring(0, indexOfQueryStart) + "manuscript/" + file.filename;
+								// processUri_1 = baseUrl + file.filename + token;
+								// processUri_1 = baseUrl + userEmail + "/" + file.name + token;
+								processUri_2 = baseUrl + userEmail + "/" + userYear + userName + "_" +
+									file.name + token;
 
 								const request = new XMLHttpRequest();
-								console.log(processUri);
-								request.open('PUT', processUri);
+								console.log(processUri_2);
+								request.open('PUT', processUri_2);
 								request.setRequestHeader('x-ms-blob-type', 'BlockBlob');
 
 								// Should call the progress method to update the progress to 100% before calling load
@@ -331,7 +398,7 @@
 								};
 							},
 
-							// url: processUri,
+							// url: processUri_1,
 							// process: {
 							// 	method: 'PUT',
 							// 	headers: {
